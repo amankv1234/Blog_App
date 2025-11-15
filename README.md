@@ -128,7 +128,11 @@ BLOG_APP
 Option A — If you're cloning this repo (recommended)
 
 # clone the repo
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone  
+
+```bash
+https://github.com/amankv1234/Blog_App.git
+```
 cd <repo-name>
 
 # install dependencies (reads package.json)
@@ -182,7 +186,9 @@ npm install -D nodemon
 
 Create a .env file in project root and populate values:
 PORT=3000
+
 MONGODB_URI=mongodb://localhost:27017/blogify
+
 How to run (commands)
 
 Development (auto restart):
@@ -190,11 +196,14 @@ Development (auto restart):
 npm run dev
 ```
   # assumes package.json has "dev": "nodemon app.js"
+  
 Production:
+
 ```bash
 npm start
 ```
  # "start": "node app.js"
+ 
 🔐 Authentication flow (high level)
 
 User signs up → password hashed with bcrypt → saved to users collection.
@@ -233,4 +242,5 @@ MIT License — see LICENSE file.
 ✉️ Author
 
 Aman Kumar Vishwakarma
+
 Email: amankumarvishwakarma
