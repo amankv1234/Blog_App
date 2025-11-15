@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>HomePage</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8faff, #eef3ff);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .blogs-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 40px;
+            animation: fadeIn 0.7s ease;
+        }
+
+        .blog-card {
+            background: #fff;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 18px 22px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .btn-view {
+            display: inline-block;
+            background: linear-gradient(90deg, #007bff, #00b4d8);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view:hover {
+            background: linear-gradient(90deg, #0056b3, #0077b6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .no-blogs {
+            text-align: center;
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 60px;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(15px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="blogs-container">
+        <h1 class="page-title">📰 Latest Blogs</h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% if (blogs.length === 0) { %>
+                <p class="no-blogs">No blogs available yet. Be the first to <a href="/add-blog">write one!</a></p>
+            <% } %>
+
+            <% blogs.forEach(blog => { %>
+                <div class="col">
+                    <div class="card blog-card">
+                        <img src="<%= blog.coverImageURL %>" alt="Blog Cover">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <p class="card-text"><%= blog.body.substring(0, 80) %>...</p>
+                            <a href="/blog/<%= blog._id %>" class="btn-view">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('./partials/script') %>
+</body>
+</html>

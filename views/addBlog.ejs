@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head')  %>
+    <title>Add New Blog</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f4ff, #dfe9f3);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+        }
+
+        .blog-form-container {
+            max-width: 600px;
+            background: white;
+            margin: 60px auto;
+            padding: 40px 35px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #444;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: 500;
+            background: linear-gradient(90deg, #007bff, #00b4d8);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #0056b3, #0077b6);
+            box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .blog-form-container {
+                padding: 30px 20px;
+                margin: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav')  %>
+
+    <div class="blog-form-container">
+        <h2>📝 Add New Blog</h2>
+        <form action="/blog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="coverImage" class="form-label">Cover Image</label>
+                <input type="file" class="form-control" name="coverImage" id="coverImage" aria-describedby="coverImage">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter blog title">
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea class="form-control" name="body" id="body" placeholder="Write your blog content here..." style="height: 150px"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary">Publish Blog</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('./partials/script')  %>
+</body>
+</html>
