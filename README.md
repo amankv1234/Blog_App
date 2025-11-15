@@ -41,7 +41,7 @@ It includes JWT authentication, cookie-based sessions, Multer uploads, and a str
 ## 📸 Screenshots
 ### 🏠 Home Page
 <p align="center">
-  <img src="./image 1" alt="Home Screenshot" width="700" />
+  <img src="./image 1.png" alt="Home Screenshot" width="700" />
 </p>
 
 ### Sign Up
@@ -51,27 +51,27 @@ It includes JWT authentication, cookie-based sessions, Multer uploads, and a str
 
 ### Sign In
 <p align="center">
-  <img src="./image 3" alt="Home Screenshot" width="700" />
+  <img src="./image 3.png" alt="Home Screenshot" width="700" />
 </p>
 
 ### Admin
 <p align="center">
-  <img src="./image 4" alt="Home Screenshot" width="700" />
+  <img src="./image 4.png" alt="Home Screenshot" width="700" />
 </p>
 
 ### Add New Blog
 <p align="center">
-  <img src="./image 5" alt="Home Screenshot" width="700" />
+  <img src="./image 5.png" alt="Home Screenshot" width="700" />
 </p>
 
 ###  Comments
 <p align="center">
-  <img src="./image 6" alt="Home Screenshot" width="700" />
+  <img src="./image 6.png" alt="Home Screenshot" width="700" />
 </p>
 
 ###  Blog Content
 <p align="center">
-  <img src="./image 7" alt="Home Screenshot" width="700" />
+  <img src="./image 7.png" alt="Home Screenshot" width="700" />
 </p>
 
 
